@@ -25,13 +25,7 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3f2fe073-16f3-4085-a219-44b5f845309b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/security-authorization-server/src/main/java/com/xwl/config/other/Demo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/a/5a7e46716f045527aebd939921c487b1642f4110" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/d/ad1822ad9e67b5fa469ed4d92097135ea6740c74" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="3f2fe073-16f3-4085-a219-44b5f845309b" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -49,7 +43,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="xwlbranch-1.0" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -206,7 +200,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="SpringSecurity oauth2整合基础版(可自定义用户以及客户端授权登录)" />
-    <option name="LAST_COMMIT_MESSAGE" value="SpringSecurity oauth2整合基础版(可自定义用户以及客户端授权登录)" />
+    <MESSAGE value="分支测试提交" />
+    <option name="LAST_COMMIT_MESSAGE" value="分支测试提交" />
   </component>
   <component name="WindowStateProjectService">
     <state x="599" y="254" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1625208083412">
@@ -273,14 +268,18 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="646" y="243" key="SettingsEditor/0.0.2560.1400@0.0.2560.1400" timestamp="1624958944504" />
-    <state x="1019" y="400" key="Vcs.Push.Dialog.v2" timestamp="1625215958379">
+    <state x="1019" y="400" key="Vcs.Push.Dialog.v2" timestamp="1625217371681">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="1019" y="400" key="Vcs.Push.Dialog.v2/0.0.2560.1400@0.0.2560.1400" timestamp="1625215958379" />
+    <state x="1019" y="400" key="Vcs.Push.Dialog.v2/0.0.2560.1400@0.0.2560.1400" timestamp="1625217371681" />
     <state x="369" y="143" width="1863" height="1147" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog" timestamp="1625215885293">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="369" y="143" width="1863" height="1147" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1625215885293" />
+    <state x="1323" y="591" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1625217393782">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="1323" y="591" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.2560.1400@0.0.2560.1400" timestamp="1625217393782" />
     <state x="1068" y="278" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1625108155847">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
