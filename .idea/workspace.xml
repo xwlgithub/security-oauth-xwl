@@ -180,7 +180,14 @@
       <option name="project" value="LOCAL" />
       <updated>1625130906708</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="分支测试提交2">
+      <created>1625217667918</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1625217667918</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -201,7 +208,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="SpringSecurity oauth2整合基础版(可自定义用户以及客户端授权登录)" />
     <MESSAGE value="分支测试提交" />
-    <option name="LAST_COMMIT_MESSAGE" value="分支测试提交" />
+    <MESSAGE value="分支测试提交2" />
+    <option name="LAST_COMMIT_MESSAGE" value="分支测试提交2" />
   </component>
   <component name="WindowStateProjectService">
     <state x="599" y="254" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1625208083412">
@@ -212,10 +220,10 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1489" y="475" width="975" height="589" key="#com.intellij.ide.util.MemberChooser/0.0.2560.1400@0.0.2560.1400" timestamp="1625044183768" />
-    <state x="972" y="258" key="CommitChangelistDialog2" timestamp="1625216086199">
+    <state x="972" y="258" key="CommitChangelistDialog2" timestamp="1625217667272">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="972" y="258" key="CommitChangelistDialog2/0.0.2560.1400@0.0.2560.1400" timestamp="1625216086199" />
+    <state x="972" y="258" key="CommitChangelistDialog2/0.0.2560.1400@0.0.2560.1400" timestamp="1625217667272" />
     <state x="646" y="124" width="1863" height="1147" key="DiffContextDialog" timestamp="1625215885293">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
@@ -268,18 +276,18 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="646" y="243" key="SettingsEditor/0.0.2560.1400@0.0.2560.1400" timestamp="1624958944504" />
-    <state x="1019" y="400" key="Vcs.Push.Dialog.v2" timestamp="1625217371681">
+    <state x="1019" y="400" key="Vcs.Push.Dialog.v2" timestamp="1625217670295">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="1019" y="400" key="Vcs.Push.Dialog.v2/0.0.2560.1400@0.0.2560.1400" timestamp="1625217371681" />
+    <state x="1019" y="400" key="Vcs.Push.Dialog.v2/0.0.2560.1400@0.0.2560.1400" timestamp="1625217670295" />
     <state x="369" y="143" width="1863" height="1147" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog" timestamp="1625215885293">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="369" y="143" width="1863" height="1147" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1625215885293" />
-    <state x="1323" y="591" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1625217393782">
+    <state x="1323" y="591" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1625217649807">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="1323" y="591" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.2560.1400@0.0.2560.1400" timestamp="1625217393782" />
+    <state x="1323" y="591" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.2560.1400@0.0.2560.1400" timestamp="1625217649807" />
     <state x="1068" y="278" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1625108155847">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
@@ -288,10 +296,10 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1124" y="361" width="596" height="536" key="find.popup/0.0.2560.1400@0.0.2560.1400" timestamp="1625208188650" />
-    <state x="1258" y="484" key="git4idea.merge.GitPullDialog" timestamp="1625215968972">
+    <state x="1258" y="484" key="git4idea.merge.GitPullDialog" timestamp="1625217404833">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="1258" y="484" key="git4idea.merge.GitPullDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1625215968972" />
+    <state x="1258" y="484" key="git4idea.merge.GitPullDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1625217404833" />
     <state x="1387" y="591" key="git4idea.ui.GitResetDialog" timestamp="1625215996438">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
