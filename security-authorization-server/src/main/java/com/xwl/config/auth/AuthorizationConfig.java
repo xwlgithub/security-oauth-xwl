@@ -1,9 +1,15 @@
 package com.xwl.config.auth;
+
 import com.xwl.config.common.Oauth2Constant;
+import com.xwl.service.impl.UserDetailServiceImpl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.oauth2.config.annotation.configurers.ClientDetailsServiceConfigurer;
@@ -11,6 +17,8 @@ import org.springframework.security.oauth2.config.annotation.web.configuration.A
 import org.springframework.security.oauth2.config.annotation.web.configuration.EnableAuthorizationServer;
 import org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerEndpointsConfigurer;
 import org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerSecurityConfigurer;
+import org.springframework.security.oauth2.provider.token.TokenStore;
+import org.springframework.security.oauth2.provider.token.store.JwtAccessTokenConverter;
 
 /**
  * @author xueWenLiang
@@ -19,16 +27,32 @@ import org.springframework.security.oauth2.config.annotation.web.configurers.Aut
  */
 @Configuration
 @EnableAuthorizationServer
-@RequiredArgsConstructor
+@SuppressWarnings("all")
 public class AuthorizationConfig extends AuthorizationServerConfigurerAdapter {
-   private final ClientDetailServiceImpl clientDetailService;
-   @Bean
-   public  PasswordEncoder passwordEncoder(){
-       return new BCryptPasswordEncoder();
-   }
+    @Autowired
+    private  ClientDetailServiceImpl clientDetailService;
+    @Autowired
+    private  UserDetailServiceImpl userDetailService;
+    /**
+     * TODO 需要注入AuthenticationManager才好使
+     * 疑点1：Security配置文件中 注入AuthenticationManage (Bean)对象
+     */
+    @Autowired
+    private AuthenticationManager authenticationManager;
+    @Autowired
+    @Qualifier("jwtTokenStore")
+    private TokenStore tokenStore;
+    @Autowired
+    private JwtAccessTokenConverter jwtAccessTokenConverter;
+
+    @Bean
+    public PasswordEncoder passwordEncoder() {
+        return new BCryptPasswordEncoder();
+    }
 
     /**
      * 安全适配
+     *
      * @param security
      * @throws Exception
      */
@@ -44,7 +68,8 @@ public class AuthorizationConfig extends AuthorizationServerConfigurerAdapter {
     }
 
     /**
-     * 客户端访问授权
+     * 客户端访问授权-jdbc查询
+     *
      * @param clients
      * @throws Exception
      */
@@ -57,11 +82,15 @@ public class AuthorizationConfig extends AuthorizationServerConfigurerAdapter {
 
     /**
      * 访问端点
+     *
      * @param endpoints
      * @throws Exception
      */
     @Override
     public void configure(AuthorizationServerEndpointsConfigurer endpoints) throws Exception {
-        super.configure(endpoints);
+        endpoints.authenticationManager(authenticationManager)
+                .userDetailsService(userDetailService)
+                .tokenStore(tokenStore)
+                .accessTokenConverter(jwtAccessTokenConverter);//配置令牌存储策略
     }
 }
