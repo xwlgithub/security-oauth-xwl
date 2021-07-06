@@ -1,6 +1,9 @@
 package com.xwl.config.auth;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.xwl.filter.CustomizeAuthenticationProcessFilter;
+import com.xwl.filter.MyDaoAuthenticationProvider;
+import com.xwl.mapper.UserMapper;
 import com.xwl.service.impl.UserDetailServiceImpl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.boot.autoconfigure.security.servlet.PathRequest;
@@ -9,15 +12,17 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.security.authentication.AuthenticationManager;
-import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.authentication.AuthenticationFailureHandler;
 import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -32,6 +37,7 @@ import java.util.Map;
 @RequiredArgsConstructor
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
     private final UserDetailServiceImpl userDetailService;
+    private final UserMapper userMapper;
     @Bean
     @Override
     public AuthenticationManager authenticationManagerBean() throws Exception {
@@ -53,9 +59,16 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
      * 自定义验证过滤器
      * @return
      */
+//    @Bean
+//    DaoAuthenticationProvider daoAuthenticationProvider() {
+//        DaoAuthenticationProvider daoAuthenticationProvider = new DaoAuthenticationProvider();
+//        daoAuthenticationProvider.setPasswordEncoder(new BCryptPasswordEncoder());
+//        daoAuthenticationProvider.setUserDetailsService(userDetailService);
+//        return daoAuthenticationProvider;
+//    }
     @Bean
-    DaoAuthenticationProvider daoAuthenticationProvider() {
-        DaoAuthenticationProvider daoAuthenticationProvider = new DaoAuthenticationProvider();
+    MyDaoAuthenticationProvider daoAuthenticationProvider() {
+        MyDaoAuthenticationProvider daoAuthenticationProvider = new MyDaoAuthenticationProvider(userDetailService,userMapper);
         daoAuthenticationProvider.setPasswordEncoder(new BCryptPasswordEncoder());
         daoAuthenticationProvider.setUserDetailsService(userDetailService);
         return daoAuthenticationProvider;
@@ -101,6 +114,21 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .requestMatchers(PathRequest.toStaticResources().atCommonLocations())
         ;
     }
+    /**
+     * Username 认证过滤器
+     * @return
+     * @throws Exception
+     */
+    @Bean
+    public CustomizeAuthenticationProcessFilter customizeAuthenticationProcessFilter() throws Exception {
+        CustomizeAuthenticationProcessFilter filter = new CustomizeAuthenticationProcessFilter();
+        filter.setAuthenticationSuccessHandler(authenticationSuccessHandler());
+        filter.setAuthenticationFailureHandler(authenticationFailureHandler());
+        filter.setFilterProcessesUrl("/api/xwlLogin");
+        filter.setAuthenticationManager(authenticationManager());
+        return filter;
+    }
+
 
     /**
      * http请求配置过滤
@@ -110,25 +138,25 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
      */
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http.authorizeRequests()
-                .anyRequest().authenticated()
-                .mvcMatchers("/oauth/**", "/login/**", "/logout/**").permitAll()
-                .and()
-                .httpBasic() //Basic提交
-                .and()
-                .csrf().disable(); //关跨域保护
-//        http
-//                .formLogin()
-//                .loginProcessingUrl("/login")
-//                .successHandler(authenticationSuccessHandler())
-//                .failureHandler(authenticationFailureHandler())
-//                .and()
-//                .authorizeRequests()
-//                .antMatchers("/login").permitAll()
+//        http.authorizeRequests()
 //                .anyRequest().authenticated()
+//                .mvcMatchers("/oauth/**", "/login/**", "/logout/**").permitAll()
 //                .and()
-//                .httpBasic()
-//                .and()
-//                .csrf().disable();
+//                .httpBasic() //Basic提交
+//                .and().addFilterAt(customizeAuthenticationProcessFilter, UsernamePasswordAuthenticationFilter.class)
+//                .csrf().disable(); //关跨域保护
+        http
+                .formLogin()
+                .loginProcessingUrl("/login")
+                .successHandler(authenticationSuccessHandler())
+                .failureHandler(authenticationFailureHandler())
+                .and()
+                .authorizeRequests()
+                .mvcMatchers("/oauth/**", "/login/**", "/logout/**","/author/sendMobileMsg/**").permitAll()
+                .anyRequest().authenticated()
+                .and()
+                .httpBasic()
+                .and().addFilterAt(customizeAuthenticationProcessFilter(), UsernamePasswordAuthenticationFilter.class)
+                .csrf().disable();
     }
 }

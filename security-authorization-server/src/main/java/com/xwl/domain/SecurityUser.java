@@ -34,7 +34,7 @@ public class SecurityUser implements UserDetails {
     @Column(name = "password_hash",length = 80,nullable = false)
     @JsonIgnore
     private String password;
-
+    private String mobile;
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return null;

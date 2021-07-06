@@ -20,12 +20,37 @@
       <path>
         <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
         <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="BRANCH:main" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:xwlbranch-1.0" type="e8cecc67:BranchNodeDescriptor" />
       </path>
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3f2fe073-16f3-4085-a219-44b5f845309b" name="Default Changelist" comment="" />
+    <list default="true" id="3f2fe073-16f3-4085-a219-44b5f845309b" name="Default Changelist" comment="分支测试提交3">
+      <change afterPath="$PROJECT_DIR$/security-authorization-server/src/main/java/com/xwl/config/other/ApplicationInitRunner.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/security-authorization-server/src/main/java/com/xwl/exception/ExceptionEnum.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/security-authorization-server/src/main/java/com/xwl/exception/RestExceptionControllerAdvice.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/security-authorization-server/src/main/java/com/xwl/exception/XwlException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/security-authorization-server/src/main/java/com/xwl/filter/CustomizeAuthenticationProcessFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/security-authorization-server/src/main/java/com/xwl/filter/MyDaoAuthenticationProvider.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/security-authorization-server/src/main/java/com/xwl/service/UserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/security-authorization-server/src/main/java/com/xwl/service/impl/UserServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/security-authorization-server/src/main/java/com/xwl/util/R.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/security-authorization-server/src/main/java/com/xwl/util/ServerUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/5/45db2e933d5b16e0eb432bdb7058a3d9861ef301" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/5/45db2e933d5b16e0eb432bdb7058a3d9861ef301" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/b/6b7f1ed7f5537e2aa4f63902997953fe5415c34a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/a/8acabd07f018bbc7bd3d80131ec65a34c52c1e71" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/a/8acabd07f018bbc7bd3d80131ec65a34c52c1e71" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/security-authorization-server/src/main/java/com/xwl/config/auth/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/security-authorization-server/src/main/java/com/xwl/config/auth/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/security-authorization-server/src/main/java/com/xwl/controller/ReseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/security-authorization-server/src/main/java/com/xwl/controller/ReseController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/security-authorization-server/src/main/java/com/xwl/domain/SecurityUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/security-authorization-server/src/main/java/com/xwl/domain/SecurityUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/security-authorization-server/src/main/java/com/xwl/mapper/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/security-authorization-server/src/main/java/com/xwl/mapper/UserMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/security-authorization-server/target/classes/com/xwl/config/auth/SecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/security-authorization-server/target/classes/com/xwl/config/auth/SecurityConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/security-authorization-server/target/classes/com/xwl/controller/ReseController.class" beforeDir="false" afterPath="$PROJECT_DIR$/security-authorization-server/target/classes/com/xwl/controller/ReseController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/security-authorization-server/target/classes/com/xwl/domain/SecurityUser$SecurityUserBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/security-authorization-server/target/classes/com/xwl/domain/SecurityUser$SecurityUserBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/security-authorization-server/target/classes/com/xwl/domain/SecurityUser.class" beforeDir="false" afterPath="$PROJECT_DIR$/security-authorization-server/target/classes/com/xwl/domain/SecurityUser.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/security-authorization-server/target/classes/com/xwl/mapper/UserMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/security-authorization-server/target/classes/com/xwl/mapper/UserMapper.class" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -34,8 +59,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="FxmlFile" />
+        <option value="Interface" />
+        <option value="Kotlin Enum" />
         <option value="Class" />
       </list>
     </option>
@@ -43,7 +69,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -98,7 +124,20 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.Demo.TT">
+  <component name="RunManager" selected="Application.ServerUtils">
+    <configuration name="ServerUtils" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.xwl.util.ServerUtils" />
+      <module name="security-authorization-server" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.xwl.util.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Demo.TT" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="security-authorization-server" />
       <extension name="coverage">
@@ -144,10 +183,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Spring Boot.SecurityAuthorizationApplication" />
+        <item itemvalue="Application.ServerUtils" />
         <item itemvalue="Spring Boot.ResourcesServerApplication" />
         <item itemvalue="JUnit.Demo.TT" />
         <item itemvalue="Spring Boot.SecurityAuthorizationApplication" />
-        <item itemvalue="Spring Boot.ResourcesServerApplication" />
       </list>
     </recent_temporary>
   </component>
@@ -172,6 +211,8 @@
       <workItem from="1625186105099" duration="1542000" />
       <workItem from="1625195345814" duration="9906000" />
       <workItem from="1625216250423" duration="585000" />
+      <workItem from="1625463912711" duration="13071000" />
+      <workItem from="1625533077100" duration="5691000" />
     </task>
     <task id="LOCAL-00001" summary="SpringSecurity oauth2整合基础版(可自定义用户以及客户端授权登录)">
       <created>1625130906708</created>
@@ -187,7 +228,14 @@
       <option name="project" value="LOCAL" />
       <updated>1625217667918</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="分支测试提交3">
+      <created>1625217870555</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1625217870555</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -198,7 +246,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="xwlbranch-1.0" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -209,61 +269,71 @@
     <MESSAGE value="SpringSecurity oauth2整合基础版(可自定义用户以及客户端授权登录)" />
     <MESSAGE value="分支测试提交" />
     <MESSAGE value="分支测试提交2" />
-    <option name="LAST_COMMIT_MESSAGE" value="分支测试提交2" />
+    <MESSAGE value="分支测试提交3" />
+    <option name="LAST_COMMIT_MESSAGE" value="分支测试提交3" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="1298" y="587" key="#Notifications" timestamp="1625218259104">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="1298" y="587" key="#Notifications/0.0.2560.1400@0.0.2560.1400" timestamp="1625218259104" />
     <state x="599" y="254" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1625208083412">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="599" y="254" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1625208083412" />
-    <state x="1489" y="475" width="975" height="589" key="#com.intellij.ide.util.MemberChooser" timestamp="1625044183768">
+    <state x="1272" y="515" width="975" height="589" key="#com.intellij.ide.util.MemberChooser" timestamp="1625536393587">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="1489" y="475" width="975" height="589" key="#com.intellij.ide.util.MemberChooser/0.0.2560.1400@0.0.2560.1400" timestamp="1625044183768" />
-    <state x="972" y="258" key="CommitChangelistDialog2" timestamp="1625217667272">
+    <state x="1272" y="515" width="975" height="589" key="#com.intellij.ide.util.MemberChooser/0.0.2560.1400@0.0.2560.1400" timestamp="1625536393587" />
+    <state x="982" y="511" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1625478847299">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="972" y="258" key="CommitChangelistDialog2/0.0.2560.1400@0.0.2560.1400" timestamp="1625217667272" />
-    <state x="646" y="124" width="1863" height="1147" key="DiffContextDialog" timestamp="1625215885293">
+    <state x="982" y="511" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1625478847299" />
+    <state x="972" y="258" key="CommitChangelistDialog2" timestamp="1625218353273">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
+    <state x="972" y="258" key="CommitChangelistDialog2/0.0.2560.1400@0.0.2560.1400" timestamp="1625218353273" />
+    <state x="646" y="124" width="1863" height="1147" key="DiffContextDialog" timestamp="1625220152391">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="646" y="124" width="1863" height="1147" key="DiffContextDialog/0.0.1920.1040/1920.0.2560.1400@0.0.1920.1040" timestamp="1625220152391" />
     <state x="646" y="124" width="1863" height="1147" key="DiffContextDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1625215885293" />
-    <state x="473" y="542" key="FileChooserDialogImpl" timestamp="1624958089551">
+    <state x="473" y="542" key="FileChooserDialogImpl" timestamp="1625466095814">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="473" y="542" key="FileChooserDialogImpl/0.0.2560.1400@0.0.2560.1400" timestamp="1624958089551" />
-    <state width="1410" height="319" key="GridCell.Tab.0.bottom" timestamp="1625216241290">
+    <state x="473" y="542" key="FileChooserDialogImpl/0.0.2560.1400@0.0.2560.1400" timestamp="1625466095814" />
+    <state width="1426" height="383" key="GridCell.Tab.0.bottom" timestamp="1625536956755">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1410" height="319" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1625216241290" />
-    <state width="1410" height="319" key="GridCell.Tab.0.center" timestamp="1625216241290">
+    <state width="1426" height="383" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1625536956755" />
+    <state width="1426" height="383" key="GridCell.Tab.0.center" timestamp="1625536956755">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1410" height="319" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1625216241290" />
-    <state width="1410" height="319" key="GridCell.Tab.0.left" timestamp="1625216241290">
+    <state width="1426" height="383" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1625536956755" />
+    <state width="1426" height="383" key="GridCell.Tab.0.left" timestamp="1625536956754">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1410" height="319" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1625216241290" />
-    <state width="1410" height="319" key="GridCell.Tab.0.right" timestamp="1625216241290">
+    <state width="1426" height="383" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1625536956754" />
+    <state width="1426" height="383" key="GridCell.Tab.0.right" timestamp="1625536956755">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1410" height="319" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1625216241290" />
-    <state width="1410" height="319" key="GridCell.Tab.1.bottom" timestamp="1625216241291">
+    <state width="1426" height="383" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1625536956755" />
+    <state width="1426" height="383" key="GridCell.Tab.1.bottom" timestamp="1625536956755">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1410" height="319" key="GridCell.Tab.1.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1625216241291" />
-    <state width="1410" height="319" key="GridCell.Tab.1.center" timestamp="1625216241291">
+    <state width="1426" height="383" key="GridCell.Tab.1.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1625536956755" />
+    <state width="1426" height="383" key="GridCell.Tab.1.center" timestamp="1625536956755">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1410" height="319" key="GridCell.Tab.1.center/0.0.2560.1400@0.0.2560.1400" timestamp="1625216241291" />
-    <state width="1410" height="319" key="GridCell.Tab.1.left" timestamp="1625216241291">
+    <state width="1426" height="383" key="GridCell.Tab.1.center/0.0.2560.1400@0.0.2560.1400" timestamp="1625536956755" />
+    <state width="1426" height="383" key="GridCell.Tab.1.left" timestamp="1625536956755">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1410" height="319" key="GridCell.Tab.1.left/0.0.2560.1400@0.0.2560.1400" timestamp="1625216241291" />
-    <state width="1410" height="319" key="GridCell.Tab.1.right" timestamp="1625216241291">
+    <state width="1426" height="383" key="GridCell.Tab.1.left/0.0.2560.1400@0.0.2560.1400" timestamp="1625536956755" />
+    <state width="1426" height="383" key="GridCell.Tab.1.right" timestamp="1625536956755">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1410" height="319" key="GridCell.Tab.1.right/0.0.2560.1400@0.0.2560.1400" timestamp="1625216241291" />
+    <state width="1426" height="383" key="GridCell.Tab.1.right/0.0.2560.1400@0.0.2560.1400" timestamp="1625536956755" />
     <state x="1031" y="429" key="Maven.ArtifactSearchDialog" timestamp="1625211376477">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
@@ -276,10 +346,10 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="646" y="243" key="SettingsEditor/0.0.2560.1400@0.0.2560.1400" timestamp="1624958944504" />
-    <state x="1019" y="400" key="Vcs.Push.Dialog.v2" timestamp="1625217670295">
+    <state x="1259" y="486" key="Vcs.Push.Dialog.v2" timestamp="1625218565238">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="1019" y="400" key="Vcs.Push.Dialog.v2/0.0.2560.1400@0.0.2560.1400" timestamp="1625217670295" />
+    <state x="1259" y="486" key="Vcs.Push.Dialog.v2/0.0.2560.1400@0.0.2560.1400" timestamp="1625218565238" />
     <state x="369" y="143" width="1863" height="1147" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog" timestamp="1625215885293">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
@@ -288,18 +358,18 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1323" y="591" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.2560.1400@0.0.2560.1400" timestamp="1625217649807" />
-    <state x="1068" y="278" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1625108155847">
+    <state x="1068" y="278" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1625535550059">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="1068" y="278" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.2560.1400@0.0.2560.1400" timestamp="1625108155847" />
+    <state x="1068" y="278" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.2560.1400@0.0.2560.1400" timestamp="1625535550059" />
     <state x="1124" y="361" width="596" height="536" key="find.popup" timestamp="1625208188650">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1124" y="361" width="596" height="536" key="find.popup/0.0.2560.1400@0.0.2560.1400" timestamp="1625208188650" />
-    <state x="1258" y="484" key="git4idea.merge.GitPullDialog" timestamp="1625217404833">
+    <state x="1258" y="484" key="git4idea.merge.GitPullDialog" timestamp="1625218006832">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="1258" y="484" key="git4idea.merge.GitPullDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1625217404833" />
+    <state x="1258" y="484" key="git4idea.merge.GitPullDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1625218006832" />
     <state x="1387" y="591" key="git4idea.ui.GitResetDialog" timestamp="1625215996438">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
@@ -308,14 +378,14 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="364" y="371" key="new project wizard/0.0.2560.1400@0.0.2560.1400" timestamp="1624959158262" />
-    <state x="1151" y="338" key="run.anything.popup" timestamp="1625121267103">
+    <state x="1151" y="338" key="run.anything.popup" timestamp="1625479008579">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="1151" y="338" key="run.anything.popup/0.0.2560.1400@0.0.2560.1400" timestamp="1625121267103" />
-    <state x="1153" y="390" width="672" height="678" key="search.everywhere.popup" timestamp="1625209864575">
+    <state x="1151" y="338" key="run.anything.popup/0.0.2560.1400@0.0.2560.1400" timestamp="1625479008579" />
+    <state x="1153" y="390" width="672" height="678" key="search.everywhere.popup" timestamp="1625467854037">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="1153" y="390" width="672" height="678" key="search.everywhere.popup/0.0.2560.1400@0.0.2560.1400" timestamp="1625209864575" />
+    <state x="1153" y="390" width="672" height="678" key="search.everywhere.popup/0.0.2560.1400@0.0.2560.1400" timestamp="1625467854037" />
     <state x="646" y="351" key="spring file set editor" timestamp="1624958933262">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>

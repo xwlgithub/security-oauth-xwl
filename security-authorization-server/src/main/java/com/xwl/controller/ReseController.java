@@ -1,11 +1,9 @@
 package com.xwl.controller;
 
+import com.xwl.service.UserService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * @author xueWenLiang
@@ -14,9 +12,17 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RequestMapping("/author")
 @RestController
+@RequiredArgsConstructor
 public class ReseController {
+    private final UserService userService;
     @GetMapping("showData")
     public ResponseEntity<String> showData() {
         return ResponseEntity.ok("成功");
+    }
+
+    @PostMapping("sendMobileMsg/{mobile}")
+    public ResponseEntity<String> sendMobileMsg(@PathVariable("mobile")String mobile){
+        Boolean isSuccess=userService.sendMobileMsg(mobile);
+        return ResponseEntity.ok(isSuccess.equals(Boolean.TRUE)?"发送成功,请查收验证码":"发送失败,服务异常");
     }
 }

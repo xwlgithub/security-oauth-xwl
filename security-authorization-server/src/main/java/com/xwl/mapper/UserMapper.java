@@ -12,13 +12,13 @@ import org.apache.ibatis.annotations.Select;
  * @Description 描述信息
  */
 @Mapper
-public interface UserMapper extends BaseMapper {
+public interface UserMapper extends BaseMapper<SecurityUser> {
 
     /**
      * 根据用户名获取用户信息
      * @param userName
      * @return
      */
-    @Select("select *  from security_user where user_name=#{userName}")
+    @Select("select *  from security_user where username=#{userName}")
     SecurityUser findSecurityUserbyName(@Param("userName")String userName);
 }
