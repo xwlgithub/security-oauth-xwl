@@ -24,16 +24,17 @@ import java.util.Optional;
  */
 @SuppressWarnings("all")
 public class CustomizeAuthenticationProcessFilter extends UsernamePasswordAuthenticationFilter {
-    private final String MOBILE_PARAM="mobile";
-    private final String VERFICATION_PARAM="verificationCode";
-    private final String REQUEST_TYPE="POST";
+    private final String MOBILE_PARAM = "mobile";
+    private final String VERFICATION_PARAM = "verificationCode";
+    private final String REQUEST_TYPE = "POST";
     @Autowired
-    private  RedisTemplate redisTemplate;
+    private RedisTemplate redisTemplate;
     @Autowired
     private UserMapper userMapper;
 
     /**
      * 自定义验证-手机号登录校验
+     *
      * @param request
      * @param response
      * @return
@@ -41,20 +42,33 @@ public class CustomizeAuthenticationProcessFilter extends UsernamePasswordAuthen
      */
     @Override
     public Authentication attemptAuthentication(HttpServletRequest request, HttpServletResponse response) throws XwlException {
+        UsernamePasswordAuthenticationToken usernamePasswordAuthenticationToken = null;
         String thisPhone = request.getParameter(MOBILE_PARAM);
         String verificationCode = request.getParameter(VERFICATION_PARAM);
-        if (!ObjectUtils.isEmpty(thisPhone)&&!ObjectUtils.isEmpty(verificationCode)&&request.getMethod().equals(REQUEST_TYPE)){
-            //验证验证码是否正确
-            String code = (String) redisTemplate.opsForValue().get(thisPhone);
+        if (!ObjectUtils.isEmpty(thisPhone) && !ObjectUtils.isEmpty(verificationCode) && request.getMethod().equals(REQUEST_TYPE)) {
             //验证码比对
-            if (code.equals(verificationCode)){
-                SecurityUser securityUser = userMapper.selectOne(Wrappers.<SecurityUser>lambdaQuery().eq(SecurityUser::getMobile, thisPhone));
-                Optional.ofNullable(securityUser).orElseThrow(() ->new XwlException(ExceptionEnum.MOBILE_ISNULL));
-                UsernamePasswordAuthenticationToken authRequest = new UsernamePasswordAuthenticationToken(securityUser.getUsername(), securityUser.getPassword());
-                this.setDetails(request, authRequest);
-                return this.getAuthenticationManager().authenticate(authRequest);
+            String cpde = (String) redisTemplate.opsForValue().get(thisPhone);
+            boolean isSuccess = false;
+            try {
+                isSuccess = cpde.equalsIgnoreCase(verificationCode);
+                if (isSuccess==false) {
+                    request.setAttribute("error", new XwlException(ExceptionEnum.VERCODE_ISFALSE));
+                }
+            } catch (Exception e) {
+                request.setAttribute("error", new XwlException(ExceptionEnum.VERCODE_ISFALSE));
             }
+            if (isSuccess) {
+                SecurityUser securityUser = userMapper.selectOne(Wrappers.<SecurityUser>lambdaQuery().eq(SecurityUser::getMobile, thisPhone));
+                if (ObjectUtils.isEmpty(securityUser)) {
+                    request.setAttribute("error", new XwlException(ExceptionEnum.MOBILE_ISNULL));
+                }
+                usernamePasswordAuthenticationToken = new UsernamePasswordAuthenticationToken(securityUser.getUsername(), securityUser.getPassword());
+                this.setDetails(request, usernamePasswordAuthenticationToken);
+            }
+        } else {
+            request.setAttribute("error", new XwlException(ExceptionEnum.DATA_MSG_ISNOTNULL));
         }
-        throw new XwlException(ExceptionEnum.MOBILE_ISNULL);
+
+        return this.getAuthenticationManager().authenticate(usernamePasswordAuthenticationToken);
     }
 }

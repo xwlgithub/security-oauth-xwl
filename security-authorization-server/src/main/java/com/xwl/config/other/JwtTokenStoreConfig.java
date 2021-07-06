@@ -1,10 +1,16 @@
 package com.xwl.config.other;
 
+import com.xwl.config.common.EnvMentConfiguration;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Import;
 import org.springframework.security.oauth2.provider.token.TokenStore;
 import org.springframework.security.oauth2.provider.token.store.JwtAccessTokenConverter;
 import org.springframework.security.oauth2.provider.token.store.JwtTokenStore;
+
+import javax.annotation.PostConstruct;
 
 /**
  * @author xueWenLiang
@@ -12,7 +18,11 @@ import org.springframework.security.oauth2.provider.token.store.JwtTokenStore;
  * @Description 使用Jwt存储token的配置
  */
 @Configuration
+@SuppressWarnings("all")
 public class JwtTokenStoreConfig {
+    @Autowired
+    private EnvMentConfiguration envMentConfiguration;
+
     @Bean
     public TokenStore jwtTokenStore() {
         return new JwtTokenStore(jwtAccessTokenConverter());
@@ -21,7 +31,8 @@ public class JwtTokenStoreConfig {
     @Bean
     public JwtAccessTokenConverter jwtAccessTokenConverter() {
         JwtAccessTokenConverter accessTokenConverter = new JwtAccessTokenConverter();
-        accessTokenConverter.setSigningKey("test_key");//配置JWT使用的秘钥
+        //配置JWT使用的秘钥
+        accessTokenConverter.setSigningKey(envMentConfiguration.getSignKey());
         return accessTokenConverter;
     }
 }

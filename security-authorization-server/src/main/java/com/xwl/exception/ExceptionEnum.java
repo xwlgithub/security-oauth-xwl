@@ -20,8 +20,10 @@ public enum  ExceptionEnum {
 
 
     //业务异常
-    USER_NAME_ISNULL(404,"用户不存在,请确认"),
-    MOBILE_ISNULL(404,"手机号不存在,请确认"),
+    USER_NAME_ISNULL(204,"用户不存在,请确认"),
+    MOBILE_ISNULL(204,"手机号不存在,请确认"),
+    VERCODE_ISFALSE(404,"手机号或验证码错误,请确认"),
+    VERCODE_ISHAVE_SURE(204,"验证码已发送过,请勿重发!"),
     DATA_MSG_ISNOTNULL(404,"请补全信息,请确认");
 
     private int code;

@@ -1,8 +1,6 @@
 
 9
 	README.md,8\e\8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
-‰
-Ysecurity-authorization-server/src/main/java/com/xwl/SecurityAuthorizationApplication.java,a\1\a11c576b49eeeb5fe07ed798d7e405410af5460a
 o
 ?security-authorization-server/src/test/java/com/itxwl/Demo.java,1\d\1d809de16783538fcba97834c356cc538e4438dc
 \
@@ -305,15 +303,9 @@ g
 7security-resources-server/security-resources-server.iml,5\e\5e43406944836b2fa47c8c8670b4bc103010889c
 Œ
 \security-authorization-server/src/main/java/com/xwl/config/auth/ClientDetailServiceImpl.java,7\9\790a0da753389bdfb424269d95182037077eee01
-…
-Usecurity-authorization-server/src/main/java/com/xwl/config/common/Oauth2Constant.java,4\1\41be475246c199c169be34fc57d5452ad13ec267
 ‰
 Ysecurity-resources-server/src/main/java/com/xwl/config/controller/ResourceController.java,3\3\33ba87c4478841bf966edb0af35493bbb5502c4a
-‰
-Ysecurity-authorization-server/src/main/java/com/xwl/config/other/JwtTokenStoreConfig.java,0\9\097847c6b3a40998825cb1d45e38af32fb215225
 ‹
 [security-authorization-server/src/main/java/com/xwl/config/other/RedisTokenStoreConfig.java,c\e\ce16e3b72485b4d5d42870327c17e011c3ef8dee
-ˆ
-Xsecurity-authorization-server/src/main/java/com/xwl/config/auth/AuthorizationConfig.java,e\4\e48c266534a0e2e7b7fa7834e516bc72f17b81fb
 y
 Isecurity-authorization-server/src/main/java/com/xwl/mapper/UserMapper.xml,b\4\b464444fddc6a6c225e9bb840012b99efbd3bc6f

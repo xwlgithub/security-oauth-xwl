@@ -18,3 +18,7 @@ mybatis-plus:
     map-underscore-to-camel-case: true #开启驼峰命名规则支持
     cache-enabled: false
   mapper-locations: classpath:com.xwl/**/mapper/*Mapper.xml
+
+
+
+signKey: xuewenliang

@@ -11,6 +11,9 @@ import com.xwl.util.ServerUtils;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
+import org.springframework.util.StringUtils;
+
+import java.util.Optional;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -23,15 +26,19 @@ import java.util.concurrent.TimeUnit;
 public class UserServiceImpl implements UserService {
     private final UserMapper userMapper;
     private final RedisTemplate redisTemplate;
+
     @Override
-    public Boolean sendMobileMsg(String mobile)  throws XwlException{
+    public Boolean sendMobileMsg(String mobile) throws XwlException {
+        if (!StringUtils.isEmpty(redisTemplate.opsForValue().get(mobile))) {
+            throw new XwlException(ExceptionEnum.VERCODE_ISHAVE_SURE);
+        }
         SecurityUser securityUser = userMapper.selectOne(Wrappers.<SecurityUser>lambdaQuery().eq(SecurityUser::getMobile, mobile));
-        if (ObjectUtils.isEmpty(securityUser)){
+        if (ObjectUtils.isEmpty(securityUser)) {
             throw new XwlException(ExceptionEnum.MOBILE_ISNULL);
         }
         //发送验证码
         String fourRandom = ServerUtils.getFourRandom();
-        redisTemplate.opsForValue().set(mobile, fourRandom);
+        redisTemplate.opsForValue().set(mobile, fourRandom, 60, TimeUnit.SECONDS);
         return true;
     }
 }
