@@ -7,4 +7,5 @@ package com.xwl.service;
  */
 public interface UserService {
     Boolean sendMobileMsg(String mobile);
+
 }

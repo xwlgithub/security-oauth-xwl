@@ -1,6 +1,7 @@
 package com.xwl.util;
 
 import java.util.Random;
+import java.util.regex.Pattern;
 
 /**
  * @author xueWenLiang
@@ -24,6 +25,16 @@ public class ServerUtils {
             }
         }
         return fourRandom;
+    }
+    /**
+     * 判断是否为数字格式不限制位数
+     * @param o
+     *     待校验参数
+     * @return
+     *     如果全为数字，返回true；否则，返回false
+     */
+    public static boolean isNumber(Object o){
+        return  (Pattern.compile("[0-9]*")).matcher(String.valueOf(o)).matches();
     }
 
     public static void main(String[] args) {

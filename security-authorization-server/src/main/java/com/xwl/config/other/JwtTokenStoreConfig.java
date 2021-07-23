@@ -27,6 +27,10 @@ public class JwtTokenStoreConfig {
     public TokenStore jwtTokenStore() {
         return new JwtTokenStore(jwtAccessTokenConverter());
     }
+    @Bean
+    public JwtTokenEnhancer jwtTokenEnhancer() {
+        return new JwtTokenEnhancer();
+    }
 
     @Bean
     public JwtAccessTokenConverter jwtAccessTokenConverter() {

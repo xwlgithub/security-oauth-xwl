@@ -38,7 +38,7 @@ public class UserServiceImpl implements UserService {
         }
         //发送验证码
         String fourRandom = ServerUtils.getFourRandom();
-        redisTemplate.opsForValue().set(mobile, fourRandom, 60, TimeUnit.SECONDS);
+        redisTemplate.opsForValue().set(mobile, fourRandom, 3600, TimeUnit.SECONDS);
         return true;
     }
 }

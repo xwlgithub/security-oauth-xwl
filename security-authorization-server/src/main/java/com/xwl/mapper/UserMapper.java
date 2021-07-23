@@ -21,4 +21,12 @@ public interface UserMapper extends BaseMapper<SecurityUser> {
      */
     @Select("select *  from security_user where username=#{userName}")
     SecurityUser findSecurityUserbyName(@Param("userName")String userName);
+
+    /**
+     * 根据手机号获取用户信息
+     * @param mobile
+     * @return
+     */
+    @Select("select *  from security_user where mobile=#{mobile}")
+    SecurityUser findSecurityUserByPhone(@Param("mobile")String mobile);
 }

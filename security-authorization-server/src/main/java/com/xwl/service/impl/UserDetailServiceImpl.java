@@ -2,6 +2,7 @@ package com.xwl.service.impl;
 
 import com.xwl.domain.SecurityUser;
 import com.xwl.mapper.UserMapper;
+import com.xwl.util.ServerUtils;
 import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Configuration;
@@ -24,7 +25,12 @@ public class UserDetailServiceImpl implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String userName) throws UsernameNotFoundException {
-        SecurityUser securityUser = userMapper.findSecurityUserbyName(userName);
+        SecurityUser securityUser=null;
+        if (ServerUtils.isNumber(userName)){
+            securityUser=userMapper.findSecurityUserByPhone(userName);
+        }else {
+             securityUser = userMapper.findSecurityUserbyName(userName);
+        }
         if (ObjectUtils.isEmpty(securityUser)) {
             throw new RuntimeException("用户不存在");
         }

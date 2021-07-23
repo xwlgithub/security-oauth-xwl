@@ -1,6 +1,7 @@
 package com.xwl.config.auth;
 
 import com.xwl.config.common.Oauth2Constant;
+import com.xwl.config.other.JwtTokenEnhancer;
 import com.xwl.service.impl.UserDetailServiceImpl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,8 +18,13 @@ import org.springframework.security.oauth2.config.annotation.web.configuration.A
 import org.springframework.security.oauth2.config.annotation.web.configuration.EnableAuthorizationServer;
 import org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerEndpointsConfigurer;
 import org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerSecurityConfigurer;
+import org.springframework.security.oauth2.provider.token.TokenEnhancer;
+import org.springframework.security.oauth2.provider.token.TokenEnhancerChain;
 import org.springframework.security.oauth2.provider.token.TokenStore;
 import org.springframework.security.oauth2.provider.token.store.JwtAccessTokenConverter;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author xueWenLiang
@@ -42,6 +48,8 @@ public class AuthorizationConfig extends AuthorizationServerConfigurerAdapter {
     @Autowired
     @Qualifier("jwtTokenStore")
     private TokenStore tokenStore;
+    @Autowired
+    private JwtTokenEnhancer jwtTokenEnhancer;
     @Autowired
     private JwtAccessTokenConverter jwtAccessTokenConverter;
 
@@ -88,9 +96,11 @@ public class AuthorizationConfig extends AuthorizationServerConfigurerAdapter {
      */
     @Override
     public void configure(AuthorizationServerEndpointsConfigurer endpoints) throws Exception {
+        //认证校验
         endpoints.authenticationManager(authenticationManager)
                 .userDetailsService(userDetailService)
+                //配置令牌存储策略
                 .tokenStore(tokenStore)
-                .accessTokenConverter(jwtAccessTokenConverter);//配置令牌存储策略
+                .accessTokenConverter(jwtAccessTokenConverter);
     }
 }

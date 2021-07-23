@@ -1,17 +1,25 @@
 package com.xwl.config.auth;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.xwl.config.auth.vercode.CaptchaAuthenticationProvider;
+import com.xwl.config.auth.vercode.CapthaAuthenticationConfiguration;
+import com.xwl.config.auth.vercode.CapthaAuthenticationFilter;
 import com.xwl.filter.CustomizeAuthenticationProcessFilter;
 import com.xwl.filter.MyDaoAuthenticationProvider;
 import com.xwl.mapper.UserMapper;
 import com.xwl.service.impl.UserDetailServiceImpl;
+import lombok.Data;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.security.servlet.PathRequest;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.ProviderManager;
+import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.builders.WebSecurity;
@@ -20,12 +28,15 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter;
 import org.springframework.security.web.authentication.AuthenticationFailureHandler;
 import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+import org.springframework.util.CollectionUtils;
+import org.springframework.util.ObjectUtils;
+import org.springframework.util.StringUtils;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 /**
  * @author xueWenLiang
@@ -35,9 +46,10 @@ import java.util.Map;
 @EnableWebSecurity(debug = true)
 @Configuration
 @RequiredArgsConstructor
+@SuppressWarnings("all")
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
     private final UserDetailServiceImpl userDetailService;
-    private final UserMapper userMapper;
+    private final CapthaAuthenticationConfiguration capthaAuthenticationConfiguration;
     @Bean
     @Override
     public AuthenticationManager authenticationManagerBean() throws Exception {
@@ -52,23 +64,17 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
      */
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        auth.authenticationProvider(daoAuthenticationProvider());
+        auth.authenticationProvider(daoAuthenticationProviderSource())
+        .authenticationProvider(capthaAuthenticationConfiguration.captchaAuthenticationProvider());
     }
 
     /**
      * 自定义验证过滤器
      * @return
      */
-//    @Bean
-//    DaoAuthenticationProvider daoAuthenticationProvider() {
-//        DaoAuthenticationProvider daoAuthenticationProvider = new DaoAuthenticationProvider();
-//        daoAuthenticationProvider.setPasswordEncoder(new BCryptPasswordEncoder());
-//        daoAuthenticationProvider.setUserDetailsService(userDetailService);
-//        return daoAuthenticationProvider;
-//    }
     @Bean
-    MyDaoAuthenticationProvider daoAuthenticationProvider() {
-        MyDaoAuthenticationProvider daoAuthenticationProvider = new MyDaoAuthenticationProvider(userDetailService,userMapper);
+    DaoAuthenticationProvider daoAuthenticationProviderSource() {
+        DaoAuthenticationProvider daoAuthenticationProvider = new DaoAuthenticationProvider();
         daoAuthenticationProvider.setPasswordEncoder(new BCryptPasswordEncoder());
         daoAuthenticationProvider.setUserDetailsService(userDetailService);
         return daoAuthenticationProvider;
@@ -114,21 +120,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .requestMatchers(PathRequest.toStaticResources().atCommonLocations())
         ;
     }
-    /**
-     * Username 认证过滤器
-     * @return
-     * @throws Exception
-     */
-    @Bean
-    public CustomizeAuthenticationProcessFilter customizeAuthenticationProcessFilter() throws Exception {
-        CustomizeAuthenticationProcessFilter filter = new CustomizeAuthenticationProcessFilter();
-        filter.setAuthenticationSuccessHandler(authenticationSuccessHandler());
-        filter.setAuthenticationFailureHandler(authenticationFailureHandler());
-        filter.setFilterProcessesUrl("/api/xwlLogin");
-        filter.setAuthenticationManager(authenticationManager());
-        return filter;
-    }
-
 
     /**
      * http请求配置过滤
@@ -148,15 +139,15 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http
                 .formLogin()
                 .loginProcessingUrl("/login")
-                .successHandler(authenticationSuccessHandler())
-                .failureHandler(authenticationFailureHandler())
+                //.successHandler(authenticationSuccessHandler())
+                //.failureHandler(authenticationFailureHandler())
                 .and()
                 .authorizeRequests()
-                .mvcMatchers("/oauth/**", "/login/**", "/logout/**","/author/sendMobileMsg/**").permitAll()
+                .mvcMatchers("/oauth/**", "/login/**", "/logout/**","/author/sendMobileMsg/**","/capthaLogin/**","/callback").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .httpBasic()
-                .and().addFilterAt(customizeAuthenticationProcessFilter(), UsernamePasswordAuthenticationFilter.class)
+                .and().addFilterBefore(capthaAuthenticationConfiguration.capthaAuthenticationFilter(), UsernamePasswordAuthenticationFilter.class)
                 .csrf().disable();
     }
 }
