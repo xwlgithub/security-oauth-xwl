@@ -11,9 +11,11 @@ import com.xwl.service.impl.UserDetailServiceImpl;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.security.SecurityProperties;
 import org.springframework.boot.autoconfigure.security.servlet.PathRequest;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.core.annotation.Order;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -47,6 +49,7 @@ import java.util.*;
 @Configuration
 @RequiredArgsConstructor
 @SuppressWarnings("all")
+@Order(SecurityProperties.BASIC_AUTH_ORDER)
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
     private final UserDetailServiceImpl userDetailService;
     private final CapthaAuthenticationConfiguration capthaAuthenticationConfiguration;
@@ -58,14 +61,13 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     /**
      * 认证选择配置
-     *
+     *.authenticationProvider(capthaAuthenticationConfiguration.captchaAuthenticationProvider())
      * @param auth
      * @throws Exception
      */
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        auth.authenticationProvider(daoAuthenticationProviderSource())
-        .authenticationProvider(capthaAuthenticationConfiguration.captchaAuthenticationProvider());
+        auth.authenticationProvider(daoAuthenticationProviderSource());
     }
 
     /**
@@ -79,34 +81,34 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         daoAuthenticationProvider.setUserDetailsService(userDetailService);
         return daoAuthenticationProvider;
     }
-    /**
-     * 认证失败处理
-     * @return
-     */
-    private AuthenticationFailureHandler authenticationFailureHandler() {
-        return (httpServletRequest,httpServletResponse,authenticationException) ->{
-            ObjectMapper om=new ObjectMapper();
-            httpServletResponse.setStatus(HttpStatus.UNAUTHORIZED.value());
-            httpServletResponse.setContentType(MediaType.APPLICATION_JSON_VALUE);
-            httpServletResponse.setCharacterEncoding("utf-8");
-            Map<String, Object> map = new HashMap<>();
-            map.put("title","认证失败");
-            map.put("details",authenticationException.getMessage());
-            httpServletResponse.getWriter().println(om.writeValueAsString(map));
-        };
-    }
-
-    /**
-     * 认证成功处理
-     * @return
-     */
-    private AuthenticationSuccessHandler authenticationSuccessHandler() {
-        return (httpServletRequest, httpServletResponse, authentication) -> {
-            ObjectMapper objectMapper=new ObjectMapper();
-            httpServletResponse.setStatus(HttpStatus.OK.value());
-            httpServletResponse.getWriter().println(objectMapper.writeValueAsString(authentication));
-        };
-    }
+//    /**
+//     * 认证失败处理
+//     * @return
+//     */
+//    private AuthenticationFailureHandler authenticationFailureHandler() {
+//        return (httpServletRequest,httpServletResponse,authenticationException) ->{
+//            ObjectMapper om=new ObjectMapper();
+//            httpServletResponse.setStatus(HttpStatus.UNAUTHORIZED.value());
+//            httpServletResponse.setContentType(MediaType.APPLICATION_JSON_VALUE);
+//            httpServletResponse.setCharacterEncoding("utf-8");
+//            Map<String, Object> map = new HashMap<>();
+//            map.put("title","认证失败");
+//            map.put("details",authenticationException.getMessage());
+//            httpServletResponse.getWriter().println(om.writeValueAsString(map));
+//        };
+//    }
+//
+//    /**
+//     * 认证成功处理
+//     * @return
+//     */
+//    private AuthenticationSuccessHandler authenticationSuccessHandler() {
+//        return (httpServletRequest, httpServletResponse, authentication) -> {
+//            ObjectMapper objectMapper=new ObjectMapper();
+//            httpServletResponse.setStatus(HttpStatus.OK.value());
+//            httpServletResponse.getWriter().println(objectMapper.writeValueAsString(authentication));
+//        };
+//    }
 
     /**
      * 静态资源放行
@@ -147,7 +149,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .anyRequest().authenticated()
                 .and()
                 .httpBasic()
-                .and().addFilterBefore(capthaAuthenticationConfiguration.capthaAuthenticationFilter(), UsernamePasswordAuthenticationFilter.class)
+                .and().addFilterBefore(capthaAuthenticationConfiguration
+                .capthaAuthenticationFilter(), UsernamePasswordAuthenticationFilter.class)
                 .csrf().disable();
     }
 }

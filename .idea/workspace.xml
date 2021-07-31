@@ -25,40 +25,18 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3f2fe073-16f3-4085-a219-44b5f845309b" name="Default Changelist" comment="分支测试提交3">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_json_json_20171018.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/2/f/2f45ab8ee897dccfadbf0a7fb5d0fc728f1445a1" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/3/33ba87c4478841bf966edb0af35493bbb5502c4a" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/1/41be475246c199c169be34fc57d5452ad13ec267" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/4/549e788a255871cb9a9aa91c3e367b0b3a974f51" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/5/55989835be79a0addb218693d64344db08c79c96" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/9/790a0da753389bdfb424269d95182037077eee01" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/1/d1eb50b8139cf7da431be4ed11a280f2773754b7" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/2/f246fdcce2dbd7cd46bd69ac07c41ec88a7b952e" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/security-authorization-server/src/main/java/com/xwl/config/auth/vercode/CaptchaAuthenticationProvider.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/security-authorization-server/src/main/java/com/xwl/config/auth/vercode/CaptchaAuthenticationToken.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/security-authorization-server/src/main/java/com/xwl/config/auth/vercode/CapthaAuthenticationConfiguration.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/security-authorization-server/src/main/java/com/xwl/config/auth/vercode/CapthaAuthenticationFilter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/security-authorization-server/src/main/java/com/xwl/config/other/JwtTokenEnhancer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/security-oauth-xwl.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/security-oauth-xwl.iml" afterDir="false" />
+    <list default="true" id="3f2fe073-16f3-4085-a219-44b5f845309b" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/3/038aff0c9efdfba95e6fb6d5b5d2d2a5f5d5747b" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/4/442292b8a7efeabbe4cc176709b833b1792140ec" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/4/549e788a255871cb9a9aa91c3e367b0b3a974f51" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/e/5e43406944836b2fa47c8c8670b4bc103010889c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/9/790a0da753389bdfb424269d95182037077eee01" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/security-authorization-server/security-authorization-server.iml" beforeDir="false" afterPath="$PROJECT_DIR$/security-authorization-server/security-authorization-server.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/security-authorization-server/src/main/java/com/xwl/config/auth/AuthorizationConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/security-authorization-server/src/main/java/com/xwl/config/auth/AuthorizationConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/security-authorization-server/src/main/java/com/xwl/config/auth/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/security-authorization-server/src/main/java/com/xwl/config/auth/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/security-authorization-server/src/main/java/com/xwl/config/other/JwtTokenStoreConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/security-authorization-server/src/main/java/com/xwl/config/other/JwtTokenStoreConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/security-authorization-server/src/main/java/com/xwl/mapper/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/security-authorization-server/src/main/java/com/xwl/mapper/UserMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/security-authorization-server/src/main/java/com/xwl/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/security-authorization-server/src/main/java/com/xwl/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/security-authorization-server/src/main/java/com/xwl/service/impl/UserDetailServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/security-authorization-server/src/main/java/com/xwl/service/impl/UserDetailServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/security-authorization-server/src/main/java/com/xwl/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/security-authorization-server/src/main/java/com/xwl/service/impl/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/security-authorization-server/src/main/java/com/xwl/util/ServerUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/security-authorization-server/src/main/java/com/xwl/util/ServerUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/security-authorization-server/target/classes/com/xwl/config/auth/AuthorizationConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/security-authorization-server/target/classes/com/xwl/config/auth/AuthorizationConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/security-authorization-server/src/main/java/com/xwl/config/auth/vercode/CaptchaAuthenticationProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/security-authorization-server/src/main/java/com/xwl/config/auth/vercode/CaptchaAuthenticationProvider.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/security-authorization-server/src/main/java/com/xwl/config/auth/vercode/CapthaAuthenticationConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/security-authorization-server/src/main/java/com/xwl/config/auth/vercode/CapthaAuthenticationConfiguration.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/security-authorization-server/target/classes/com/xwl/config/auth/SecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/security-authorization-server/target/classes/com/xwl/config/auth/SecurityConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/security-authorization-server/target/classes/com/xwl/config/other/JwtTokenStoreConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/security-authorization-server/target/classes/com/xwl/config/other/JwtTokenStoreConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/security-authorization-server/target/classes/com/xwl/mapper/UserMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/security-authorization-server/target/classes/com/xwl/mapper/UserMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/security-authorization-server/target/classes/com/xwl/service/impl/UserDetailServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/security-authorization-server/target/classes/com/xwl/service/impl/UserDetailServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/security-resources-server/security-resources-server.iml" beforeDir="false" afterPath="$PROJECT_DIR$/security-resources-server/security-resources-server.iml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,17 +56,10 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="xwlbranch-1.0" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="GithubPullRequestsUISettings">
-    <option name="hiddenUrls">
-      <set>
-        <option value="https://github.com/xwlgithub/security-oauth-xwl.git" />
-      </set>
-    </option>
   </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
@@ -128,7 +99,7 @@
     <property name="project.structure.last.edited" value="Global Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="MavenSettings" />
   </component>
   <component name="ReactorSettings">
     <option name="notificationShown" value="true" />
@@ -140,7 +111,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.ResourcesServerApplication">
+  <component name="RunManager" selected="Spring Boot.SecurityAuthorizationApplication">
     <configuration name="ResourcesServerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="security-resources-server" />
       <extension name="coverage">
@@ -177,6 +148,7 @@
         <item itemvalue="Spring Boot.ResourcesServerApplication" />
         <item itemvalue="Spring Boot.SecurityAuthorizationApplication" />
         <item itemvalue="Spring Boot.ResourcesServerApplication" />
+        <item itemvalue="Spring Boot.SecurityAuthorizationApplication" />
       </list>
     </recent_temporary>
   </component>
@@ -203,18 +175,14 @@
       <workItem from="1625216250423" duration="585000" />
       <workItem from="1625463912711" duration="13071000" />
       <workItem from="1625533077100" duration="5691000" />
-      <workItem from="1625621105088" duration="5734000" />
-      <workItem from="1625728695399" duration="1742000" />
-      <workItem from="1625740860568" duration="1909000" />
-      <workItem from="1625790987836" duration="25123000" />
-      <workItem from="1626056184171" duration="17898000" />
-      <workItem from="1626222615744" duration="653000" />
-      <workItem from="1626225696610" duration="1184000" />
-      <workItem from="1626311025323" duration="287000" />
-      <workItem from="1626311370657" duration="1083000" />
-      <workItem from="1626395696732" duration="90000" />
-      <workItem from="1626657478312" duration="3889000" />
-      <workItem from="1626855795666" duration="132000" />
+      <workItem from="1627021065746" duration="32000" />
+      <workItem from="1627029709123" duration="1104000" />
+      <workItem from="1627352732812" duration="3922000" />
+      <workItem from="1627379133246" duration="108000" />
+      <workItem from="1627624656137" duration="2633000" />
+      <workItem from="1627715498714" duration="1520000" />
+      <workItem from="1627732789286" duration="55000" />
+      <workItem from="1627737331394" duration="2190000" />
     </task>
     <task id="LOCAL-00001" summary="SpringSecurity oauth2整合基础版(可自定义用户以及客户端授权登录)">
       <created>1625130906708</created>
@@ -237,14 +205,7 @@
       <option name="project" value="LOCAL" />
       <updated>1625217870555</updated>
     </task>
-    <task id="LOCAL-00004" summary="增加过滤器异常返回JSON格式至前台">
-      <created>1625564423057</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1625564423057</updated>
-    </task>
-    <option name="localTasksCounter" value="5" />
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -279,30 +240,29 @@
     <MESSAGE value="分支测试提交" />
     <MESSAGE value="分支测试提交2" />
     <MESSAGE value="分支测试提交3" />
-    <MESSAGE value="增加过滤器异常返回JSON格式至前台" />
-    <option name="LAST_COMMIT_MESSAGE" value="增加过滤器异常返回JSON格式至前台" />
+    <option name="LAST_COMMIT_MESSAGE" value="分支测试提交3" />
   </component>
   <component name="WindowStateProjectService">
     <state x="1298" y="587" key="#Notifications" timestamp="1625218259104">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1298" y="587" key="#Notifications/0.0.2560.1400@0.0.2560.1400" timestamp="1625218259104" />
-    <state x="599" y="254" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1625794920003">
+    <state x="599" y="254" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1625558936761">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="599" y="254" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1625794920003" />
-    <state x="1272" y="515" width="975" height="589" key="#com.intellij.ide.util.MemberChooser" timestamp="1626079791232">
+    <state x="599" y="254" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1625558936761" />
+    <state x="1272" y="515" width="975" height="589" key="#com.intellij.ide.util.MemberChooser" timestamp="1625536393587">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="1272" y="515" width="975" height="589" key="#com.intellij.ide.util.MemberChooser/0.0.2560.1400@0.0.2560.1400" timestamp="1626079791232" />
+    <state x="1272" y="515" width="975" height="589" key="#com.intellij.ide.util.MemberChooser/0.0.2560.1400@0.0.2560.1400" timestamp="1625536393587" />
     <state x="982" y="511" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1625478847299">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="982" y="511" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1625478847299" />
-    <state x="972" y="258" key="CommitChangelistDialog2" timestamp="1626084429568">
+    <state x="972" y="258" key="CommitChangelistDialog2" timestamp="1625218353273">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="972" y="258" key="CommitChangelistDialog2/0.0.2560.1400@0.0.2560.1400" timestamp="1626084429568" />
+    <state x="972" y="258" key="CommitChangelistDialog2/0.0.2560.1400@0.0.2560.1400" timestamp="1625218353273" />
     <state x="646" y="124" width="1863" height="1147" key="DiffContextDialog" timestamp="1625220152391">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -312,38 +272,46 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="473" y="542" key="FileChooserDialogImpl/0.0.2560.1400@0.0.2560.1400" timestamp="1625466095814" />
-    <state width="1693" height="428" key="GridCell.Tab.0.bottom" timestamp="1626661780014">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state width="1576" height="265" key="GridCell.Tab.0.bottom" timestamp="1627739397338">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1693" height="428" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1626661780014" />
-    <state width="1693" height="428" key="GridCell.Tab.0.center" timestamp="1626661780014">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state width="1576" height="265" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1627739397338" />
+    <state width="2142" height="590" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1627719039408" />
+    <state width="1576" height="265" key="GridCell.Tab.0.center" timestamp="1627739397338">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1693" height="428" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1626661780014" />
-    <state width="1693" height="428" key="GridCell.Tab.0.left" timestamp="1626661780014">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state width="1576" height="265" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1627739397338" />
+    <state width="2142" height="590" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1627719039408" />
+    <state width="1576" height="265" key="GridCell.Tab.0.left" timestamp="1627739397338">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1693" height="428" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1626661780014" />
-    <state width="1693" height="428" key="GridCell.Tab.0.right" timestamp="1626661780014">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state width="1576" height="265" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1627739397338" />
+    <state width="2142" height="590" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1627719039408" />
+    <state width="1576" height="265" key="GridCell.Tab.0.right" timestamp="1627739397338">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1693" height="428" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1626661780014" />
-    <state width="1693" height="428" key="GridCell.Tab.1.bottom" timestamp="1626661780014">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state width="1576" height="265" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1627739397338" />
+    <state width="2142" height="590" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1627719039408" />
+    <state width="1576" height="265" key="GridCell.Tab.1.bottom" timestamp="1627739397338">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1693" height="428" key="GridCell.Tab.1.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1626661780014" />
-    <state width="1693" height="428" key="GridCell.Tab.1.center" timestamp="1626661780014">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state width="1576" height="265" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1627739397338" />
+    <state width="2142" height="590" key="GridCell.Tab.1.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1627719039408" />
+    <state width="1576" height="265" key="GridCell.Tab.1.center" timestamp="1627739397338">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1693" height="428" key="GridCell.Tab.1.center/0.0.2560.1400@0.0.2560.1400" timestamp="1626661780014" />
-    <state width="1693" height="428" key="GridCell.Tab.1.left" timestamp="1626661780014">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state width="1576" height="265" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1627739397338" />
+    <state width="2142" height="590" key="GridCell.Tab.1.center/0.0.2560.1400@0.0.2560.1400" timestamp="1627719039408" />
+    <state width="1576" height="265" key="GridCell.Tab.1.left" timestamp="1627739397338">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1693" height="428" key="GridCell.Tab.1.left/0.0.2560.1400@0.0.2560.1400" timestamp="1626661780014" />
-    <state width="1693" height="428" key="GridCell.Tab.1.right" timestamp="1626661780014">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state width="1576" height="265" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1627739397338" />
+    <state width="2142" height="590" key="GridCell.Tab.1.left/0.0.2560.1400@0.0.2560.1400" timestamp="1627719039408" />
+    <state width="1576" height="265" key="GridCell.Tab.1.right" timestamp="1627739397338">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1693" height="428" key="GridCell.Tab.1.right/0.0.2560.1400@0.0.2560.1400" timestamp="1626661780014" />
+    <state width="1576" height="265" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1627739397338" />
+    <state width="2142" height="590" key="GridCell.Tab.1.right/0.0.2560.1400@0.0.2560.1400" timestamp="1627719039408" />
     <state x="1031" y="429" key="Maven.ArtifactSearchDialog" timestamp="1625211376477">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
@@ -352,14 +320,14 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="806" y="372" key="NewModule_or_Project.wizard/0.0.2560.1400@0.0.2560.1400" timestamp="1624957631246" />
-    <state x="1125" y="510" key="SettingsEditor" timestamp="1626069257598">
+    <state x="646" y="243" key="SettingsEditor" timestamp="1624958944504">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="1125" y="510" key="SettingsEditor/0.0.2560.1400@0.0.2560.1400" timestamp="1626069257598" />
-    <state x="1259" y="486" key="Vcs.Push.Dialog.v2" timestamp="1625564465810">
+    <state x="646" y="243" key="SettingsEditor/0.0.2560.1400@0.0.2560.1400" timestamp="1624958944504" />
+    <state x="1259" y="486" key="Vcs.Push.Dialog.v2" timestamp="1627021088608">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="1259" y="486" key="Vcs.Push.Dialog.v2/0.0.2560.1400@0.0.2560.1400" timestamp="1625564465810" />
+    <state x="1259" y="486" key="Vcs.Push.Dialog.v2/0.0.2560.1400@0.0.2560.1400" timestamp="1627021088608" />
     <state x="369" y="143" width="1863" height="1147" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog" timestamp="1625215885293">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
@@ -368,18 +336,14 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1323" y="591" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.2560.1400@0.0.2560.1400" timestamp="1625217649807" />
-    <state x="994" y="330" width="911" height="604" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1626075685091">
+    <state x="1068" y="278" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1625535550059">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="994" y="330" width="911" height="604" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.2560.1400@0.0.2560.1400" timestamp="1626075685091" />
-    <state x="-14" y="61" width="1621" height="1112" key="dock-window-1" timestamp="1626078630976">
+    <state x="1068" y="278" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.2560.1400@0.0.2560.1400" timestamp="1625535550059" />
+    <state x="435" y="397" width="1610" height="854" key="find.popup" timestamp="1627715925931">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="-14" y="61" width="1621" height="1112" key="dock-window-1/0.0.2560.1400@0.0.2560.1400" timestamp="1626078630976" />
-    <state x="1124" y="361" width="1263" height="912" key="find.popup" timestamp="1626659775814">
-      <screen x="0" y="0" width="2560" height="1400" />
-    </state>
-    <state x="1124" y="361" width="1263" height="912" key="find.popup/0.0.2560.1400@0.0.2560.1400" timestamp="1626659775814" />
+    <state x="435" y="397" width="1610" height="854" key="find.popup/0.0.2560.1400@0.0.2560.1400" timestamp="1627715925931" />
     <state x="1258" y="484" key="git4idea.merge.GitPullDialog" timestamp="1625218006832">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
@@ -392,17 +356,38 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="364" y="371" key="new project wizard/0.0.2560.1400@0.0.2560.1400" timestamp="1624959158262" />
-    <state x="1151" y="338" key="run.anything.popup" timestamp="1625819085942">
+    <state x="1151" y="338" key="run.anything.popup" timestamp="1625563788066">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="1151" y="338" key="run.anything.popup/0.0.2560.1400@0.0.2560.1400" timestamp="1625819085942" />
-    <state x="1153" y="390" width="672" height="678" key="search.everywhere.popup" timestamp="1626080898601">
+    <state x="1151" y="338" key="run.anything.popup/0.0.2560.1400@0.0.2560.1400" timestamp="1625563788066" />
+    <state x="1153" y="390" width="672" height="678" key="search.everywhere.popup" timestamp="1627716064681">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="1153" y="390" width="672" height="678" key="search.everywhere.popup/0.0.2560.1400@0.0.2560.1400" timestamp="1626080898601" />
+    <state x="1153" y="390" width="672" height="678" key="search.everywhere.popup/0.0.2560.1400@0.0.2560.1400" timestamp="1627716064681" />
     <state x="646" y="351" key="spring file set editor" timestamp="1624958933262">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="646" y="351" key="spring file set editor/0.0.2560.1400@0.0.2560.1400" timestamp="1624958933262" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/security-authorization-server/src/main/java/com/xwl/config/auth/vercode/CapthaAuthenticationConfiguration.java</url>
+          <line>81</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/security-authorization-server/src/main/java/com/xwl/config/auth/vercode/CapthaAuthenticationConfiguration.java</url>
+          <line>86</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/security-authorization-server/src/main/java/com/xwl/config/auth/vercode/CapthaAuthenticationConfiguration.java</url>
+          <line>90</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
