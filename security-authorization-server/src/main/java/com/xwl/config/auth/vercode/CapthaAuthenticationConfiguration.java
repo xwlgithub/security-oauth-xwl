@@ -1,37 +1,22 @@
 package com.xwl.config.auth.vercode;
-import com.alibaba.nacos.client.utils.JSONUtils;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.nimbusds.oauth2.sdk.util.MapUtils;
 import com.xwl.config.auth.ClientDetailServiceImpl;
 import com.xwl.service.impl.UserDetailServiceImpl;
-import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Primary;
-import org.springframework.core.Ordered;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.security.authentication.ProviderManager;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.oauth2.common.DefaultOAuth2AccessToken;
 import org.springframework.security.oauth2.common.OAuth2AccessToken;
-import org.springframework.security.oauth2.provider.ClientDetails;
-import org.springframework.security.oauth2.provider.OAuth2Authentication;
-import org.springframework.security.oauth2.provider.OAuth2Request;
-import org.springframework.security.oauth2.provider.TokenRequest;
+import org.springframework.security.oauth2.provider.*;
 import org.springframework.security.oauth2.provider.endpoint.TokenEndpoint;
+import org.springframework.security.oauth2.provider.token.AuthorizationServerTokenServices;
 import org.springframework.security.web.authentication.AuthenticationFailureHandler;
 import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
 
 import javax.annotation.PostConstruct;
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
-import java.security.Principal;
 import java.util.*;
 
 /**
@@ -50,6 +35,8 @@ public class CapthaAuthenticationConfiguration {
     private TokenEndpoint tokenEndpoint;
     @Autowired
     private ClientDetailServiceImpl clientDetailService;
+    @Autowired
+    private AuthorizationServerTokenServices tokenService;
     private static CapthaAuthenticationConfiguration cn=new CapthaAuthenticationConfiguration();
     @PostConstruct
     public void init(){
@@ -57,6 +44,7 @@ public class CapthaAuthenticationConfiguration {
        cn.redisTemplate=this.redisTemplate;
        cn.tokenEndpoint=this.tokenEndpoint;
        cn.clientDetailService=this.clientDetailService;
+       cn.tokenService=this.tokenService;
     }
 
     /**
@@ -76,20 +64,26 @@ public class CapthaAuthenticationConfiguration {
     public CaptchaAuthenticationProvider captchaAuthenticationProvider(){
         return new CaptchaAuthenticationProvider(cn.userDetailService, cn.redisTemplate);
     }
+
+    /**
+     * 验证码登录返回token
+     * @return
+     */
     @Bean
     public AuthenticationSuccessHandler authenticationSuccessHandler(){
         return (httpServletRequest, httpServletResponse, authentication) -> {
             ObjectMapper objectMapper=new ObjectMapper();
-            TokenRequest tokenRequest = new TokenRequest(null, "vercode-01", Arrays.asList("all"), "authorization_code,password,refresh_token,client_credentials");
+            Map<String, String> mapParamas=new HashMap<>();
+            mapParamas.put("username", "xwl");
+            mapParamas.put("password", "123456");
+            TokenRequest tokenRequest = new TokenRequest(mapParamas, "vercode-01", Arrays.asList("all"), "authorization_code,password,refresh_token,client_credentials");
             ClientDetails clientDetails = cn.clientDetailService.loadClientByClientId("vercode-01");
             OAuth2Request oAuth2Request = tokenRequest.createOAuth2Request(clientDetails);
 
             OAuth2Authentication oAuth2Authentication = new OAuth2Authentication(oAuth2Request, authentication);
-
-           // OAuth2AccessToken token = authorizationServerTokenServices.createAccessToken(oAuth2Authentication);
-
+            OAuth2AccessToken accessToken = tokenService.createAccessToken(oAuth2Authentication);
             httpServletResponse.setContentType("application/json;charset=UTF-8");
-            httpServletResponse.getWriter().write(objectMapper.writeValueAsString(oAuth2Authentication));
+            httpServletResponse.getWriter().write(objectMapper.writeValueAsString(accessToken));
 //            ObjectMapper objectMapper=new ObjectMapper();
 //            httpServletResponse.setStatus(HttpStatus.OK.value());
 //            httpServletResponse.getWriter().println(objectMapper.writeValueAsString(authentication));
