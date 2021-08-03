@@ -25,17 +25,7 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3f2fe073-16f3-4085-a219-44b5f845309b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/security-authorization-server/src/main/java/com/xwl/config/auth/vercode/CaptchaTokenGranter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/2/0/20e17c38eb29df97bc1c8410ecd22d6f43f960d2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/2/f246fdcce2dbd7cd46bd69ac07c41ec88a7b952e" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/security-authorization-server/src/main/java/com/xwl/config/auth/AuthorizationConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/security-authorization-server/src/main/java/com/xwl/config/auth/AuthorizationConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/security-authorization-server/src/main/java/com/xwl/config/auth/vercode/CapthaAuthenticationConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/security-authorization-server/src/main/java/com/xwl/config/auth/vercode/CapthaAuthenticationConfiguration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/security-authorization-server/src/main/java/com/xwl/config/common/ToErrorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/security-authorization-server/src/main/java/com/xwl/config/common/ToErrorController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/security-authorization-server/target/classes/com/xwl/config/auth/AuthorizationConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/security-authorization-server/target/classes/com/xwl/config/auth/AuthorizationConfig.class" afterDir="false" />
-    </list>
+    <list default="true" id="3f2fe073-16f3-4085-a219-44b5f845309b" name="Default Changelist" comment="分支测试提交3" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -266,11 +256,11 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="982" y="511" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1625478847299" />
-    <state x="729" y="187" key="CommitChangelistDialog2" timestamp="1627739552467">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="972" y="258" key="CommitChangelistDialog2" timestamp="1627972483152">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="729" y="187" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1627739552467" />
-    <state x="972" y="258" key="CommitChangelistDialog2/0.0.2560.1400@0.0.2560.1400" timestamp="1625218353273" />
+    <state x="972" y="258" key="CommitChangelistDialog2/0.0.2560.1400@0.0.2560.1400" timestamp="1627972483152" />
     <state x="646" y="124" width="1863" height="1147" key="DiffContextDialog" timestamp="1625220152391">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -332,11 +322,11 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="646" y="243" key="SettingsEditor/0.0.2560.1400@0.0.2560.1400" timestamp="1624958944504" />
-    <state x="944" y="361" key="Vcs.Push.Dialog.v2" timestamp="1627739603865">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="1259" y="486" key="Vcs.Push.Dialog.v2" timestamp="1627972494558">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="944" y="361" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1627739603865" />
-    <state x="1259" y="486" key="Vcs.Push.Dialog.v2/0.0.2560.1400@0.0.2560.1400" timestamp="1627021088608" />
+    <state x="1259" y="486" key="Vcs.Push.Dialog.v2/0.0.2560.1400@0.0.2560.1400" timestamp="1627972494558" />
     <state x="369" y="143" width="1863" height="1147" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog" timestamp="1625215885293">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
