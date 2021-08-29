@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="java">
+    <CLASSES />
+    <JAVADOC />
+    <SOURCES>
+      <root url="file://$PROJECT_DIR$/security-authorization-server/src/main/java" />
+      <root url="file://$PROJECT_DIR$/security-authorization-server/src/test/java" />
+      <root url="file://$PROJECT_DIR$/security-resources-server/src/main/java" />
+    </SOURCES>
+  </library>
+</component>

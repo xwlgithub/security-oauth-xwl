@@ -135,6 +135,11 @@
                 <configuration>
                     <source>1.8</source>
                     <target>1.8</target>
+                    <fork>true</fork>
+                    <compilerArguments>
+                        <bootclasspath>${env.JAVA_HOME}/jre/lib/rt.jar:${env.JAVA_HOME}/jre/lib/plugin.jar</bootclasspath>
+                    </compilerArguments>
+
                 </configuration>
             </plugin>
         </plugins>

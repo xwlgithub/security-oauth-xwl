@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
+import org.springframework.core.Ordered;
 import org.springframework.security.oauth2.common.exceptions.InvalidClientException;
 import org.springframework.security.oauth2.provider.ClientDetails;
 import org.springframework.security.oauth2.provider.client.JdbcClientDetailsService;
@@ -22,7 +23,7 @@ import javax.sql.DataSource;
 @Configuration
 @Setter
 @Slf4j
-public class ClientDetailServiceImpl  extends JdbcClientDetailsService {
+public class ClientDetailServiceImpl  extends JdbcClientDetailsService   {
     @Autowired
     private  DataSource dataSource;
     public ClientDetailServiceImpl(DataSource dataSource) {
@@ -50,7 +51,6 @@ public class ClientDetailServiceImpl  extends JdbcClientDetailsService {
         ClientDetailServiceImpl clientDetailsService = new ClientDetailServiceImpl(dataSource);
         return clientDetailsService;
     }
-
 
 
 
