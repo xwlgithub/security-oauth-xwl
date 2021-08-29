@@ -43,7 +43,7 @@ import java.util.*;
 /**
  * @author xueWenLiang
  * @date 2021/6/30 15:07
- * @Description 安全配置中心
+ * @Description (认证授权)安全配置中心
  */
 @EnableWebSecurity(debug = true)
 @Configuration
@@ -81,34 +81,22 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         daoAuthenticationProvider.setUserDetailsService(userDetailService);
         return daoAuthenticationProvider;
     }
-//    /**
-//     * 认证失败处理
-//     * @return
-//     */
-//    private AuthenticationFailureHandler authenticationFailureHandler() {
-//        return (httpServletRequest,httpServletResponse,authenticationException) ->{
-//            ObjectMapper om=new ObjectMapper();
-//            httpServletResponse.setStatus(HttpStatus.UNAUTHORIZED.value());
-//            httpServletResponse.setContentType(MediaType.APPLICATION_JSON_VALUE);
-//            httpServletResponse.setCharacterEncoding("utf-8");
-//            Map<String, Object> map = new HashMap<>();
-//            map.put("title","认证失败");
-//            map.put("details",authenticationException.getMessage());
-//            httpServletResponse.getWriter().println(om.writeValueAsString(map));
-//        };
-//    }
-//
-//    /**
-//     * 认证成功处理
-//     * @return
-//     */
-//    private AuthenticationSuccessHandler authenticationSuccessHandler() {
-//        return (httpServletRequest, httpServletResponse, authentication) -> {
-//            ObjectMapper objectMapper=new ObjectMapper();
-//            httpServletResponse.setStatus(HttpStatus.OK.value());
-//            httpServletResponse.getWriter().println(objectMapper.writeValueAsString(authentication));
-//        };
-//    }
+    /**
+     * 认证失败处理
+     * @return
+     */
+    private AuthenticationFailureHandler authenticationFailureHandler() {
+        return (httpServletRequest,httpServletResponse,authenticationException) ->{
+            ObjectMapper om=new ObjectMapper();
+            httpServletResponse.setStatus(HttpStatus.UNAUTHORIZED.value());
+            httpServletResponse.setContentType(MediaType.APPLICATION_JSON_VALUE);
+            httpServletResponse.setCharacterEncoding("utf-8");
+            Map<String, Object> map = new HashMap<>();
+            map.put("title","认证失败");
+            map.put("details",authenticationException.getMessage());
+            httpServletResponse.getWriter().println(om.writeValueAsString(map));
+        };
+    }
 
     /**
      * 静态资源放行
@@ -138,6 +126,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 //                .httpBasic() //Basic提交
 //                .and().addFilterAt(customizeAuthenticationProcessFilter, UsernamePasswordAuthenticationFilter.class)
 //                .csrf().disable(); //关跨域保护
+
         http
                 .formLogin()
                 .loginProcessingUrl("/login")
