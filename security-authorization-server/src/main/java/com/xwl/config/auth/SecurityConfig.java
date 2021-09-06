@@ -99,6 +99,19 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     }
 
     /**
+     * 认证成功处理
+     * @return
+     */
+    private AuthenticationSuccessHandler authenticationSuccessHandler() {
+        return (httpServletRequest, httpServletResponse, authentication) -> {
+            System.out.println("张三");
+            ObjectMapper objectMapper=new ObjectMapper();
+            httpServletResponse.setStatus(HttpStatus.OK.value());
+            httpServletResponse.getWriter().println(objectMapper.writeValueAsString(authentication));
+        };
+    }
+
+    /**
      * 静态资源放行
      * @param web
      * @throws Exception
