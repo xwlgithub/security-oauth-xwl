@@ -34,6 +34,7 @@ public class JwtTokenStoreConfig {
 
     @Bean
     public JwtAccessTokenConverter jwtAccessTokenConverter() {
+        System.out.println("我要配置秘钥");
         JwtAccessTokenConverter accessTokenConverter = new JwtAccessTokenConverter();
         //配置JWT使用的秘钥
         accessTokenConverter.setSigningKey(envMentConfiguration.getSignKey());

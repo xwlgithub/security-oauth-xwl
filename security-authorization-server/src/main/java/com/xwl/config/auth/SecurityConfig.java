@@ -138,7 +138,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 //                .and()
 //                .httpBasic() //Basic提交
 //                .and().addFilterAt(customizeAuthenticationProcessFilter, UsernamePasswordAuthenticationFilter.class)
-//                .csrf().disable(); //关跨域保护
+//                .csrf().disable(); //关跨域保护"/oauth/**""/author/sendMobileMsg/**"
 
         http
                 .formLogin()
@@ -147,7 +147,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 //.failureHandler(authenticationFailureHandler())
                 .and()
                 .authorizeRequests()
-                .mvcMatchers("/oauth/**", "/login/**", "/logout/**","/author/sendMobileMsg/**","/capthaLogin/**","/callback").permitAll()
+                .mvcMatchers("/login/**","/dpk/logins/**", "/logout/**","/author/sendMobileMsg/**","/capthaLogin/**","/callback").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .httpBasic()

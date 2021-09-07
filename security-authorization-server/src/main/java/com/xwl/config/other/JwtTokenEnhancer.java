@@ -17,6 +17,7 @@ import java.util.Set;
 public class JwtTokenEnhancer implements TokenEnhancer {
     @Override
     public OAuth2AccessToken enhance(OAuth2AccessToken accessToken, OAuth2Authentication authentication) {
+        System.out.println("我要新加一些参数到token信息体");
         Map<String, Object> info = new HashMap<>();
         info.put("enhance", "enhance info");
         ((DefaultOAuth2AccessToken) accessToken).setAdditionalInformation(info);

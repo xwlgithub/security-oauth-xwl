@@ -1,6 +1,6 @@
 package com.xwl.config.auth;
 
-import com.xwl.config.auth.vercode.CaptchaTokenGranter;
+//import com.xwl.config.auth.vercode.CaptchaTokenGranter;
 import com.xwl.config.common.Oauth2Constant;
 import com.xwl.config.other.JwtTokenEnhancer;
 import com.xwl.service.impl.UserDetailServiceImpl;
@@ -28,6 +28,7 @@ import org.springframework.security.oauth2.provider.token.TokenStore;
 import org.springframework.security.oauth2.provider.token.store.JwtAccessTokenConverter;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
@@ -41,9 +42,9 @@ import java.util.List;
 @SuppressWarnings("all")
 public class AuthorizationConfig extends AuthorizationServerConfigurerAdapter {
     @Autowired
-    private  ClientDetailServiceImpl clientDetailService;
+    private ClientDetailServiceImpl clientDetailService;
     @Autowired
-    private  UserDetailServiceImpl userDetailService;
+    private UserDetailServiceImpl userDetailService;
     /**
      * TODO 需要注入AuthenticationManager才好使
      * 疑点1：Security配置文件中 注入AuthenticationManage (Bean)对象
@@ -94,13 +95,17 @@ public class AuthorizationConfig extends AuthorizationServerConfigurerAdapter {
     }
 
     /**
-     * 访问端点
+     * 授权时->流程节点增强处理器
      *
      * @param endpoints
      * @throws Exception
      */
     @Override
     public void configure(AuthorizationServerEndpointsConfigurer endpoints) throws Exception {
+//        //token增强链
+//        TokenEnhancerChain tokenEnhancerChain = new TokenEnhancerChain();
+//        tokenEnhancerChain.setTokenEnhancers(Arrays.asList(jwtTokenEnhancer));
+
         //认证校验
         endpoints.authenticationManager(authenticationManager)
                 .userDetailsService(userDetailService)
