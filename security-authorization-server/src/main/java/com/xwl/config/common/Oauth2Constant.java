@@ -19,7 +19,6 @@ public class Oauth2Constant {
             "access_token_validity,refresh_token_validity,additional_information,autoapprove from " + CLIENT_TABLE;
 
     public static final String FIND_CLIENT_DETAIL_SQL = CLIENT_BASE + " order by client_id";
-    public static final String DEMOS_ABC="123456";
 
     public static final String SELECT_CLIENT_DETAIL_SQL = CLIENT_BASE + " where client_id = ?";
 }
