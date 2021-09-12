@@ -21,4 +21,6 @@ public class Oauth2Constant {
     public static final String FIND_CLIENT_DETAIL_SQL = CLIENT_BASE + " order by client_id";
 
     public static final String SELECT_CLIENT_DETAIL_SQL = CLIENT_BASE + " where client_id = ?";
+
+    public static final String HAHA_ZOUNI="DSAFA";
 }

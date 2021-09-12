@@ -16,4 +16,7 @@ public class EnvMentConfiguration {
     @Value("${signKey}")
     private String signKey;
 
+
+    @Value("dsada")
+    private String dsadas;
 }
