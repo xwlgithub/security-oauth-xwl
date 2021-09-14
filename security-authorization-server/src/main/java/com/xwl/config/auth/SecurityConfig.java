@@ -147,7 +147,13 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 //.failureHandler(authenticationFailureHandler())
                 .and()
                 .authorizeRequests()
-                .mvcMatchers("/login/**","/dpk/logins/**", "/logout/**","/author/sendMobileMsg/**","/capthaLogin/**","/callback").permitAll()
+                .mvcMatchers("/login/**",
+                        "/dpk/logins/**",
+                        "/logout/**",
+                        "/author/sendMobileMsg/**",
+                        "/capthaLogin/**",
+                        "/callback",
+                        "/oauth/authorize/**").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .httpBasic()
