@@ -1,23 +1,25 @@
 package com.xwl.controller;
 
 import com.xwl.util.R;
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.security.Principal;
+import java.util.Map;
 
 /**
  * @author xueWenLiang
- * @date 2021/9/7 17:28
+ * @date 2021/9/16 13:56
  * @Description 描述信息
  */
 @RestController
-
-@RequestMapping("d")
+@RequestMapping("/de")
 public class DemoController {
 
-
-    @GetMapping("ss")
-    public R<String> sss(){
-        return R.OK("dsafas");
+    @PostMapping("haha")
+    public R<Object> getHaa(Principal principal,@RequestParam Map<String,Object> params){
+        return R.OK("2554");
     }
 }

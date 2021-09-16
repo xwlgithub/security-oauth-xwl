@@ -113,4 +113,17 @@ public class AuthorizationConfig extends AuthorizationServerConfigurerAdapter {
                 .tokenStore(tokenStore)
                 .accessTokenConverter(jwtAccessTokenConverter);
     }
+
+    /**
+     * 授权方式->()
+     * 获取常用两种授权方式(客户端秘钥方式，授权码模式)->
+     * @param endpoints
+     * @return
+     */
+    private TokenGranter tokenGranter(final AuthorizationServerEndpointsConfigurer endpoints){
+        //获取已经存在的授权方式
+        List<TokenGranter> granters = new ArrayList<>(Collections.singletonList(endpoints.getTokenGranter()));
+        //添加自定义授权模式
+        return  new CompositeTokenGranter(granters);
+    }
 }
