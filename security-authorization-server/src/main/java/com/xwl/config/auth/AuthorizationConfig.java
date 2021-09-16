@@ -2,6 +2,7 @@ package com.xwl.config.auth;
 
 //import com.xwl.config.auth.vercode.CaptchaTokenGranter;
 import com.xwl.config.common.Oauth2Constant;
+import com.xwl.config.granter.MobileQuickLoginGranter;
 import com.xwl.config.other.JwtTokenEnhancer;
 import com.xwl.service.impl.UserDetailServiceImpl;
 import lombok.RequiredArgsConstructor;
@@ -22,6 +23,10 @@ import org.springframework.security.oauth2.config.annotation.web.configurers.Aut
 import org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerSecurityConfigurer;
 import org.springframework.security.oauth2.provider.CompositeTokenGranter;
 import org.springframework.security.oauth2.provider.TokenGranter;
+import org.springframework.security.oauth2.provider.client.ClientCredentialsTokenGranter;
+import org.springframework.security.oauth2.provider.implicit.ImplicitTokenGranter;
+import org.springframework.security.oauth2.provider.password.ResourceOwnerPasswordTokenGranter;
+import org.springframework.security.oauth2.provider.refresh.RefreshTokenGranter;
 import org.springframework.security.oauth2.provider.token.TokenEnhancer;
 import org.springframework.security.oauth2.provider.token.TokenEnhancerChain;
 import org.springframework.security.oauth2.provider.token.TokenStore;
@@ -111,7 +116,9 @@ public class AuthorizationConfig extends AuthorizationServerConfigurerAdapter {
                 .userDetailsService(userDetailService)
                 //配置令牌存储策略
                 .tokenStore(tokenStore)
-                .accessTokenConverter(jwtAccessTokenConverter);
+                .accessTokenConverter(jwtAccessTokenConverter)
+                .tokenGranter(tokenGranter(endpoints))
+        ;
     }
 
     /**
@@ -123,7 +130,25 @@ public class AuthorizationConfig extends AuthorizationServerConfigurerAdapter {
     private TokenGranter tokenGranter(final AuthorizationServerEndpointsConfigurer endpoints){
         //获取已经存在的授权方式
         List<TokenGranter> granters = new ArrayList<>(Collections.singletonList(endpoints.getTokenGranter()));
+        // 原生授权模式
+//        granters.add(new ImplicitTokenGranter(
+//                endpoints.getTokenServices(),
+//                endpoints.getClientDetailsService(),
+//                endpoints.getOAuth2RequestFactory()));
+        granters.add(new RefreshTokenGranter(
+                endpoints.getTokenServices(),
+                endpoints.getClientDetailsService(),
+                endpoints.getOAuth2RequestFactory()));
+        granters.add(new ResourceOwnerPasswordTokenGranter(
+                authenticationManager, endpoints.getTokenServices(),
+                endpoints.getClientDetailsService(),
+                endpoints.getOAuth2RequestFactory()));
+        granters.add(new ClientCredentialsTokenGranter(
+                endpoints.getTokenServices(),
+                endpoints.getClientDetailsService(),
+                endpoints.getOAuth2RequestFactory()));
         //添加自定义授权模式
+        granters.add(new MobileQuickLoginGranter(endpoints.getTokenServices(),endpoints.getClientDetailsService(),endpoints.getOAuth2RequestFactory(),authenticationManager));
         return  new CompositeTokenGranter(granters);
     }
 }

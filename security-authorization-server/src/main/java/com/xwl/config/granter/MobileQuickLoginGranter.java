@@ -36,7 +36,7 @@ public class MobileQuickLoginGranter extends AbstractTokenGranter {
         super(tokenServices, clientDetailsService, requestFactory, grantType);
         this.authenticationManager=authenticationManager;
     }
-    protected MobileQuickLoginGranter(AuthorizationServerTokenServices tokenServices,
+    public MobileQuickLoginGranter(AuthorizationServerTokenServices tokenServices,
                                       ClientDetailsService clientDetailsService,
                                       OAuth2RequestFactory requestFactory,AuthenticationManager authenticationManager) {
        this(tokenServices, clientDetailsService, requestFactory, "MOBILE_QUICK",authenticationManager);

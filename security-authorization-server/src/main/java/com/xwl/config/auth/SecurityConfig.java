@@ -4,6 +4,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.xwl.config.auth.vercode.CaptchaAuthenticationProvider;
 import com.xwl.config.auth.vercode.CapthaAuthenticationConfiguration;
 import com.xwl.config.auth.vercode.CapthaAuthenticationFilter;
+import com.xwl.config.auth.vercode.CapthaOauthSecurityConfig;
 import com.xwl.filter.CustomizeAuthenticationProcessFilter;
 import com.xwl.filter.MyDaoAuthenticationProvider;
 import com.xwl.mapper.UserMapper;
@@ -53,6 +54,8 @@ import java.util.*;
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
     private final UserDetailServiceImpl userDetailService;
     private final CapthaAuthenticationConfiguration capthaAuthenticationConfiguration;
+
+    private final CapthaOauthSecurityConfig capthaOauthSecurityConfig;
     @Bean
     @Override
     public AuthenticationManager authenticationManagerBean() throws Exception {
@@ -147,8 +150,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 //.failureHandler(authenticationFailureHandler())
                 .and()
                 .authorizeRequests()
-                .mvcMatchers("/login/**","/dpk/logins/**", "/logout/**","/author/**","/capthaLogin/**","/callback","/xwl-oauth/**","/de/**").permitAll()
+                .mvcMatchers("/login/**","/dpk/logins/**", "/logout/**","/author/**","/capthaLogin/**","/callback","/xwl-oauth/**").permitAll()
                 .anyRequest().authenticated()
+                .and()
+                .apply(capthaOauthSecurityConfig)
                 .and()
                 .httpBasic()
                 .and().addFilterBefore(capthaAuthenticationConfiguration
