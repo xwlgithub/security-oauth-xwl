@@ -3,7 +3,7 @@ package com.xwl.config.common;
 /**
  * @author xueWenLiang
  * @date 2021/6/30 17:01
- * @Description 认证URL常量
+ * @Description 认证URL常量是
  */
 public class Oauth2Constant {
     /**
