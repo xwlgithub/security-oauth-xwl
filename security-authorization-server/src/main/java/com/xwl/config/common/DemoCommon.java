@@ -8,7 +8,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class DemoCommon {
-
+//打
     private String name;
     private String address;
     private String sex;
