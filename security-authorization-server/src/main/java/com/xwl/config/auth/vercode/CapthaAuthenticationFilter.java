@@ -1,11 +1,13 @@
 package com.xwl.config.auth.vercode;
 
+import com.xwl.config.handler.CommonAuthenticationSuccessHandler;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.AuthenticationServiceException;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter;
+import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 import org.springframework.stereotype.Component;
@@ -46,6 +48,7 @@ public class CapthaAuthenticationFilter extends AbstractAuthenticationProcessing
         setDetails(request, captchaAuthenticationToken);
         return this.getAuthenticationManager().authenticate(captchaAuthenticationToken);
     }
+
     protected void setDetails(HttpServletRequest request,
                               CaptchaAuthenticationToken authRequest) {
         authRequest.setDetails(authenticationDetailsSource.buildDetails(request));
